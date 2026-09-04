@@ -50,37 +50,9 @@ function HomePage() {
           <h2 className="label md:col-span-3">{a.heading}</h2>
           <div className="md:col-span-9">
             <p className="text-2xl leading-snug tracking-tight md:text-4xl">{a.lead}</p>
-<<<<<<< HEAD
-            {a.body.map((para, i) => (
-              <p key={i} className="mt-6 max-w-3xl text-base leading-relaxed text-muted-foreground">
-                {renderText(para)}
-              </p>
-            ))}
-
-            {/* Contacts block on About page */}
-            <div className="mt-10">
-              <h2 className="display mt-8 text-4xl md:text-6xl">{d.nav.contact}</h2>
-              <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground">{d.contact.collaboration}</p>
-
-              <ul className="mt-6 border-t border-border max-w-3xl">
-                <li className="border-b border-border py-3">
-                  <a href={`mailto:${CONTACT_INFO.email}`} className="hover-underline text-lg">
-                    {CONTACT_INFO.email}
-                  </a>
-                </li>
-                <li className="border-b border-border py-3">
-                  <a href={CONTACT_INFO.instagramUrl} target="_blank" rel="noreferrer noopener" className="hover-underline text-lg">
-                    Instagram {CONTACT_INFO.instagram}
-                  </a>
-                </li>
-                <li className="border-b border-border py-3 text-lg text-muted-foreground">{t(CONTACT_INFO.location, l)}</li>
-              </ul>
-            </div>
-=======
             <Link to="/$lang/about" params={{ lang: l }} className="label mt-8 inline-block hover-underline">
               {d.common.learnMore} →
             </Link>
->>>>>>> origin/main
           </div>
         </div>
       </Reveal>

@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "postinstall": "node ./scripts/patch-rolldown.js"
+    "postinstall": "node ./scripts/patch-rolldown.cjs"
   },
   "overrides": {
     "rolldown": "1.2.1"
