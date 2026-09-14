@@ -34,7 +34,7 @@ const seeds: Seed[] = [
   {
     id: "anastasiia-berezina",
     name: "Anastasiia Berezina",
-    birthYear: 1988,
+    birthYear: 1992,
     city: ["Buenos Aires / Rusia", "Buenos Aires / Russia", "Буэнос-Айрес / Россия"],
     practice: ["Pintura, instalación participativa", "Painting, participatory installation", "Живопись, участвующая инсталляция"],
     media: ["Acrílico sobre lienzo", "Acrylic on canvas", "Акрил на холсте"],
@@ -179,6 +179,13 @@ const shortTemplates = {
   },
 };
 
+const artistLinks: Partial<Record<string, { website?: string; instagram?: string }>> = {
+  "anastasiia-berezina": {
+    website: "https://publdobr.lovable.app/",
+    instagram: "@anastas.berezina",
+  },
+};
+
 export const artists: Artist[] = seeds.map((s, i) => ({
   id: s.id,
   name: s.name,
@@ -186,6 +193,8 @@ export const artists: Artist[] = seeds.map((s, i) => ({
   city: { es: s.city[0], en: s.city[1], ru: s.city[2] },
   practice: { es: s.practice[0], en: s.practice[1], ru: s.practice[2] },
   media: { es: s.media[0], en: s.media[1], ru: s.media[2] },
+  website: artistLinks[s.id]?.website,
+  instagram: artistLinks[s.id]?.instagram,
   portrait: portraits[i % portraits.length]!,
   short: { 
     es: shortTemplates.es[s.id as keyof typeof shortTemplates.es], 
