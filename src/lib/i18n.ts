@@ -351,7 +351,7 @@ export const dict: Record<Lang, Dict> = {
 };
 
 export const CONTACT_INFO = {
-  email: "hola@foundationbruma.org",
+  email: "brumafundacion@gmail.com",
   instagram: "@bruma_fundacion",
   instagramUrl: "https://www.instagram.com/bruma_fundacion/",
   location: {
