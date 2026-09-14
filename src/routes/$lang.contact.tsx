@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 
 import { CONTACT_INFO, dict, t, type Lang } from "@/lib/i18n";
+import { sendContactMessage } from "@/lib/send-contact";
 import { localizedHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/$lang/contact")({
@@ -23,10 +24,12 @@ function ContactPage() {
   const [errors, setErrors] = useState<Errors>({});
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
+  const [sendError, setSendError] = useState(false);
 
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const form = new FormData(e.currentTarget);
+    const formEl = e.currentTarget;
+    const form = new FormData(formEl);
     if (String(form.get("company") ?? "")) return; // honeypot
 
     const values = {
@@ -42,13 +45,20 @@ function ContactPage() {
     });
     if (values.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)) next.email = d.contact.errorEmail;
     setErrors(next);
+    setSendError(false);
+    setSent(false);
     if (Object.keys(next).length > 0) return;
 
     setSending(true);
-    await new Promise((r) => setTimeout(r, 700));
-    setSending(false);
-    setSent(true);
-    e.currentTarget.reset();
+    try {
+      await sendContactMessage(values);
+      setSent(true);
+      formEl.reset();
+    } catch {
+      setSendError(true);
+    } finally {
+      setSending(false);
+    }
   };
 
   const field = "mt-2 w-full border-b border-border bg-transparent py-3 text-lg outline-none focus:border-foreground";
@@ -120,7 +130,7 @@ function ContactPage() {
           </button>
 
           <p aria-live="polite" className="mt-6 text-lg">
-            {sent ? d.contact.success : ""}
+            {sent ? d.contact.success : sendError ? d.contact.errorSend : ""}
           </p>
         </form>
       </div>

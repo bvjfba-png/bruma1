@@ -63,6 +63,7 @@ type Dict = {
     success: string;
     errorRequired: string;
     errorEmail: string;
+    errorSend: string;
     collaboration: string;
   };
   meta: Record<
@@ -128,6 +129,7 @@ export const dict: Record<Lang, Dict> = {
       success: "Gracias por su mensaje.",
       errorRequired: "Este campo es obligatorio.",
       errorEmail: "Ingresá un email válido.",
+      errorSend: "No se pudo enviar el mensaje. Intentá de nuevo o escribinos por email.",
       collaboration:
         "Trabajamos con instituciones, curadores, editoriales y espacios independientes. Escribinos para proponer una colaboración, una residencia o un proyecto editorial.",
     },
@@ -220,6 +222,7 @@ export const dict: Record<Lang, Dict> = {
       success: "Thank you for your message.",
       errorRequired: "This field is required.",
       errorEmail: "Please enter a valid email.",
+      errorSend: "Could not send the message. Please try again or email us directly.",
       collaboration:
         "We work with institutions, curators, publishers and independent spaces. Write to us to propose a collaboration, a residency or an editorial project.",
     },
@@ -312,6 +315,7 @@ export const dict: Record<Lang, Dict> = {
       success: "Спасибо за ваше сообщение.",
       errorRequired: "Обязательное поле.",
       errorEmail: "Введите корректный email.",
+      errorSend: "Не удалось отправить сообщение. Попробуйте ещё раз или напишите нам на email.",
       collaboration:
         "Мы работаем с институциями, кураторами, издательствами и независимыми площадками. Напишите, если хотите предложить коллаборацию, резиденцию или издательский проект.",
     },
