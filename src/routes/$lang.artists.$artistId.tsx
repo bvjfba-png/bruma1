@@ -42,7 +42,6 @@ function ArtistPage() {
     [d.common.year, String(artist.birthYear)],
     [d.common.location, t(artist.city, l)],
     ["Practice", t(artist.practice, l)],
-    ["Media", t(artist.media, l)],
   ];
 
   return (
@@ -82,7 +81,12 @@ function ArtistPage() {
               )}
               {artist.instagram && (
                 <li>
-                  <a href="https://instagram.com/" target="_blank" rel="noreferrer noopener" className="text-sm hover-underline">
+                  <a
+                    href={`https://www.instagram.com/${artist.instagram.replace(/^@/, "")}/`}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="text-sm hover-underline"
+                  >
                     Instagram {artist.instagram}
                   </a>
                 </li>
