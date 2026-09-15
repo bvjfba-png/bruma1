@@ -23,14 +23,14 @@ function ArtistsPage() {
   const d = dict[l] ?? dict.es;
 
   return (
-    <section className="mx-auto max-w-[1600px] px-5 py-16 md:px-10 md:py-24">
-      <h1 className="display text-6xl md:text-8xl">{d.nav.artists}</h1>
+    <section className="mx-auto max-w-[1600px] px-5 py-12 md:px-10 md:py-24">
+      <h1 className="display text-4xl sm:text-6xl md:text-8xl">{d.nav.artists}</h1>
 
-      <ul className="mt-16 grid grid-cols-2 gap-x-6 gap-y-12 md:grid-cols-3 lg:gap-x-10">
+      <ul className="mt-10 grid grid-cols-2 gap-x-4 gap-y-10 sm:gap-x-6 sm:gap-y-12 md:mt-16 md:grid-cols-3 lg:gap-x-10">
         {artists.map((a, i) => (
           <Reveal as="li" key={a.id} className={`lg:${offsets[i % offsets.length]}`}>
             <Link to="/$lang/artists/$artistId" params={{ lang: l, artistId: a.id }} className="group block">
-              <p className="label mb-2">{a.name}</p>
+              <p className="label mb-2 leading-snug">{a.name}</p>
               <div className="overflow-hidden">
                 <img
                   src={a.portrait}

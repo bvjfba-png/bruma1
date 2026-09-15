@@ -46,14 +46,14 @@ function ArtistPage() {
   ];
 
   return (
-    <article className="mx-auto max-w-[1600px] px-5 py-16 md:px-10 md:py-24">
+    <article className="mx-auto max-w-[1600px] px-5 py-12 md:px-10 md:py-24">
       <Link to="/$lang/artists" params={{ lang: l }} className="label hover-underline text-muted-foreground">
         ← {d.nav.artists}
       </Link>
 
-      <h1 className="display mt-8 text-6xl md:text-8xl">{artist.name}</h1>
+      <h1 className="display mt-6 text-4xl sm:text-6xl md:mt-8 md:text-8xl">{artist.name}</h1>
 
-      <div className="mt-16 grid gap-12 md:grid-cols-12">
+      <div className="mt-10 grid gap-10 md:mt-16 md:grid-cols-12 md:gap-12">
         <div className="md:col-span-5 lg:col-span-4">
           <img
             src={artist.portrait}
@@ -64,9 +64,9 @@ function ArtistPage() {
           />
           <dl className="mt-6 border-t border-border">
             {info.map(([k, v]) => (
-              <div key={k} className="flex justify-between gap-6 border-b border-border py-3">
+              <div key={k} className="flex flex-col gap-1 border-b border-border py-3 sm:flex-row sm:justify-between sm:gap-6">
                 <dt className="label text-muted-foreground">{k}</dt>
-                <dd className="text-sm">{v}</dd>
+                <dd className="text-sm sm:text-right">{v}</dd>
               </div>
             ))}
           </dl>

@@ -90,6 +90,7 @@
 
   html {
     -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
   }
 
   body {
@@ -97,6 +98,14 @@
     color: var(--color-foreground);
     font-family: var(--font-sans);
     font-synthesis-weight: none;
+    overflow-x: clip;
+  }
+
+  img,
+  video,
+  svg {
+    max-width: 100%;
+    height: auto;
   }
 
   :focus-visible {
