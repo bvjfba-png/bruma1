@@ -129,29 +129,28 @@ export function SiteHeader({ lang }: { lang: Lang }) {
         <LanguageSwitcher lang={lang} className="shrink-0" />
       </div>
 
-      <div
-        id={menuId}
-        className={`border-t border-border lg:hidden ${open ? "block" : "hidden"}`}
-        hidden={!open}
-      >
-        <nav aria-label="Mobile" className="mx-auto max-w-[1600px] px-5 py-2 md:px-10">
-          <ul>
-            {items.map((item) => (
-              <li key={item.to} className="border-b border-border last:border-0">
-                <Link
-                  to={item.to}
-                  params={{ lang }}
-                  className="block py-4 text-2xl tracking-tight"
-                  activeProps={{ className: "block py-4 text-2xl tracking-tight underline underline-offset-8" }}
-                  activeOptions={{ exact: "exact" in item }}
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </div>
+      {open ? (
+        <div id={menuId} className="border-t border-border lg:hidden">
+          <nav aria-label="Mobile" className="mx-auto max-w-[1600px] px-5 py-2 md:px-10">
+            <ul>
+              {items.map((item) => (
+                <li key={item.to} className="border-b border-border last:border-0">
+                  <Link
+                    to={item.to}
+                    params={{ lang }}
+                    onClick={() => setOpen(false)}
+                    className="block py-4 text-2xl tracking-tight"
+                    activeProps={{ className: "block py-4 text-2xl tracking-tight underline underline-offset-8" }}
+                    activeOptions={{ exact: "exact" in item }}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
+      ) : null}
     </header>
   );
 }
