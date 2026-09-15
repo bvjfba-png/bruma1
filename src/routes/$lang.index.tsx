@@ -25,9 +25,9 @@ function HomePage() {
 
   return (
     <>
-      <section className="mx-auto max-w-[1600px] px-5 pt-16 pb-10 md:px-10 md:pt-24">
-        <h1 className="display text-[19vw] leading-[0.82] md:text-[15vw]">BRUMA</h1>
-        <p className="label mt-6 max-w-lg text-muted-foreground">
+      <section className="mx-auto max-w-[1600px] px-5 pt-10 pb-8 md:px-10 md:pt-24 md:pb-10">
+        <h1 className="display text-[22vw] leading-[0.82] md:text-[15vw]">BRUMA</h1>
+        <p className="label mt-5 max-w-lg text-muted-foreground md:mt-6">
           Migration · Memory · Identity · Transformation · Liminality · Archive
         </p>
       </section>
@@ -45,11 +45,11 @@ function HomePage() {
         </figcaption>
       </figure>
 
-      <Reveal as="section" className="mx-auto max-w-[1600px] px-5 py-24 md:px-10">
-        <div className="grid gap-10 md:grid-cols-12">
+      <Reveal as="section" className="mx-auto max-w-[1600px] px-5 py-16 md:px-10 md:py-24">
+        <div className="grid gap-6 md:grid-cols-12 md:gap-10">
           <h2 className="label md:col-span-3">{a.heading}</h2>
           <div className="md:col-span-9">
-            <p className="text-2xl leading-snug tracking-tight md:text-4xl">{a.lead}</p>
+            <p className="text-xl leading-snug tracking-tight sm:text-2xl md:text-4xl">{a.lead}</p>
             <Link to="/$lang/about" params={{ lang: l }} className="label mt-8 inline-block hover-underline">
               {d.common.learnMore} →
             </Link>
@@ -57,10 +57,10 @@ function HomePage() {
         </div>
       </Reveal>
 
-      <Reveal as="section" className="mx-auto max-w-[1600px] px-5 pb-24 md:px-10">
-        <div className="flex items-baseline justify-between gap-6 border-t border-border pt-10">
-          <h2 className="display text-5xl md:text-7xl">{d.nav.artists}</h2>
-          <Link to="/$lang/artists" params={{ lang: l }} className="label hover-underline">
+      <Reveal as="section" className="mx-auto max-w-[1600px] px-5 pb-16 md:px-10 md:pb-24">
+        <div className="flex flex-col gap-4 border-t border-border pt-10 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
+          <h2 className="display text-4xl sm:text-5xl md:text-7xl">{d.nav.artists}</h2>
+          <Link to="/$lang/artists" params={{ lang: l }} className="label hover-underline shrink-0">
             {d.common.viewAllArtists} →
           </Link>
         </div>
@@ -86,10 +86,10 @@ function HomePage() {
         </ul>
       </Reveal>
 
-      <Reveal as="section" className="mx-auto max-w-[1600px] px-5 pb-24 md:px-10">
-        <div className="flex items-baseline justify-between gap-6 border-t border-border pt-10">
-          <h2 className="display text-5xl md:text-7xl">{d.nav.projects}</h2>
-          <Link to="/$lang/projects" params={{ lang: l }} className="label hover-underline">
+      <Reveal as="section" className="mx-auto max-w-[1600px] px-5 pb-16 md:px-10 md:pb-24">
+        <div className="flex flex-col gap-4 border-t border-border pt-10 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
+          <h2 className="display text-4xl sm:text-5xl md:text-7xl">{d.nav.projects}</h2>
+          <Link to="/$lang/projects" params={{ lang: l }} className="label hover-underline shrink-0">
             {d.common.all} →
           </Link>
         </div>
@@ -119,8 +119,12 @@ function HomePage() {
       </Reveal>
 
       <Reveal as="section" className="border-t border-border">
-        <div className="mx-auto max-w-[1600px] px-5 py-24 md:px-10">
-          <Link to="/$lang/contact" params={{ lang: l }} className="display block text-8xl hover-underline md:text-10xl">
+        <div className="mx-auto max-w-[1600px] px-5 py-16 md:px-10 md:py-24">
+          <Link
+            to="/$lang/contact"
+            params={{ lang: l }}
+            className="display block text-[12vw] leading-[0.9] hover-underline sm:text-7xl md:text-10xl"
+          >
             {d.common.getInTouch} →
           </Link>
         </div>

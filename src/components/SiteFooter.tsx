@@ -35,7 +35,7 @@ export function SiteFooter({ lang }: { lang: Lang }) {
         <div className="md:col-span-3">
           <ul className="space-y-2">
             <li>
-              <a href={`mailto:${CONTACT_INFO.email}`} className="label hover-underline">
+              <a href={`mailto:${CONTACT_INFO.email}`} className="label hover-underline break-all">
                 {CONTACT_INFO.email}
               </a>
             </li>
@@ -47,7 +47,7 @@ export function SiteFooter({ lang }: { lang: Lang }) {
           </ul>
         </div>
 
-        <div className="flex items-start justify-between gap-6 md:col-span-2 md:flex-col md:items-end">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between sm:gap-6 md:col-span-2 md:flex-col md:items-end">
           <LanguageSwitcher lang={lang} />
           <p className="label text-muted-foreground">© {new Date().getFullYear()} Foundation Bruma</p>
         </div>

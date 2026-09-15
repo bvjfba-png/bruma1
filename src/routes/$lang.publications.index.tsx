@@ -20,8 +20,8 @@ function PublicationsPage() {
   const d = dict[l] ?? dict.es;
 
   return (
-    <section className="mx-auto max-w-[1600px] px-5 py-16 md:px-10 md:py-24">
-      <h1 className="display text-6xl md:text-8xl">{d.nav.publications}</h1>
+    <section className="mx-auto max-w-[1600px] px-5 py-12 md:px-10 md:py-24">
+      <h1 className="display text-4xl sm:text-6xl md:text-8xl">{d.nav.publications}</h1>
 
       <ul className="mt-16 border-t border-border">
         {[...publications]

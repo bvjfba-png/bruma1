@@ -40,11 +40,11 @@ function ProjectsPage() {
     `label transition-colors ${active ? "text-foreground underline underline-offset-8" : "text-muted-foreground hover:text-foreground"}`;
 
   return (
-    <section className="mx-auto max-w-[1600px] px-5 py-16 md:px-10 md:py-24">
-      <h1 className="display text-6xl md:text-8xl">{d.nav.projects}</h1>
+    <section className="mx-auto max-w-[1600px] px-5 py-12 md:px-10 md:py-24">
+      <h1 className="display text-4xl sm:text-6xl md:text-8xl">{d.nav.projects}</h1>
 
-      <div className="mt-12 space-y-4 border-y border-border py-5" role="group" aria-label={d.common.filters}>
-        <div className="flex flex-wrap items-center gap-5">
+      <div className="mt-8 space-y-4 border-y border-border py-5 md:mt-12" role="group" aria-label={d.common.filters}>
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-3 sm:gap-5">
           <span className="label text-muted-foreground">{d.common.type}</span>
           <button type="button" onClick={() => setType("all")} className={chip(type === "all")} aria-pressed={type === "all"}>
             {d.common.all}

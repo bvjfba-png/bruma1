@@ -54,24 +54,24 @@ function ContactPage() {
   const field = "mt-2 w-full border-b border-border bg-transparent py-3 text-lg outline-none focus:border-foreground";
 
   return (
-    <section className="mx-auto max-w-[1600px] px-5 py-16 md:px-10 md:py-24">
-      <h1 className="display text-6xl md:text-8xl">{d.nav.contact}</h1>
+    <section className="mx-auto max-w-[1600px] px-5 py-12 md:px-10 md:py-24">
+      <h1 className="display text-4xl sm:text-6xl md:text-8xl">{d.nav.contact}</h1>
 
-      <div className="mt-16 grid gap-16 md:grid-cols-12">
+      <div className="mt-10 grid gap-12 md:mt-16 md:grid-cols-12 md:gap-16">
         <div className="md:col-span-4">
-          <p className="text-lg leading-relaxed">{d.contact.collaboration}</p>
-          <ul className="mt-10 border-t border-border">
+          <p className="text-base leading-relaxed sm:text-lg">{d.contact.collaboration}</p>
+          <ul className="mt-8 border-t border-border md:mt-10">
             <li className="border-b border-border py-3">
-              <a href={`mailto:${CONTACT_INFO.email}`} className="hover-underline text-lg">
+              <a href={`mailto:${CONTACT_INFO.email}`} className="hover-underline break-all text-base sm:text-lg">
                 {CONTACT_INFO.email}
               </a>
             </li>
             <li className="border-b border-border py-3">
-              <a href={CONTACT_INFO.instagramUrl} target="_blank" rel="noreferrer noopener" className="hover-underline text-lg">
+              <a href={CONTACT_INFO.instagramUrl} target="_blank" rel="noreferrer noopener" className="hover-underline text-base sm:text-lg">
                 Instagram {CONTACT_INFO.instagram}
               </a>
             </li>
-            <li className="border-b border-border py-3 text-lg text-muted-foreground">{t(CONTACT_INFO.location, l)}</li>
+            <li className="border-b border-border py-3 text-base text-muted-foreground sm:text-lg">{t(CONTACT_INFO.location, l)}</li>
           </ul>
         </div>
 
@@ -83,14 +83,14 @@ function ContactPage() {
               <label htmlFor="name" className="label text-muted-foreground">
                 {d.contact.formName}
               </label>
-              <input id="name" name="name" className={field} />
+              <input id="name" name="name" className={field} autoComplete="name" />
               {errors.name && <p className="mt-2 text-sm text-muted-foreground">{errors.name}</p>}
             </div>
             <div>
               <label htmlFor="email" className="label text-muted-foreground">
                 {d.contact.formEmail}
               </label>
-              <input id="email" name="email" type="email" className={field} />
+              <input id="email" name="email" type="email" className={field} autoComplete="email" />
               {errors.email && <p className="mt-2 text-sm text-muted-foreground">{errors.email}</p>}
             </div>
           </div>
